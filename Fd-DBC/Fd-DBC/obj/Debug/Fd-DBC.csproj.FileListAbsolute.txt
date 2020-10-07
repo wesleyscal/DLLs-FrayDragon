@@ -18,3 +18,23 @@ C:\Users\ti02\source\repos\Fd-DBC\Fd-DBC\bin\Debug\System.Memory.dll
 C:\Users\ti02\source\repos\Fd-DBC\Fd-DBC\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\ti02\source\repos\Fd-DBC\Fd-DBC\bin\Debug\MySql.Data.xml
 C:\Users\ti02\source\repos\Fd-DBC\Fd-DBC\obj\Debug\Fd-DBC.csproj.CopyComplete
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\bin\Debug\Fd-DBC.dll
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\bin\Debug\Fd-DBC.pdb
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\bin\Debug\MySql.Data.dll
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\bin\Debug\Google.Protobuf.dll
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\bin\Debug\Zstandard.Net.dll
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\bin\Debug\Renci.SshNet.dll
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\bin\Debug\System.Buffers.dll
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\bin\Debug\System.Memory.dll
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\bin\Debug\MySql.Data.xml
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\obj\Debug\Fd-DBC.csprojAssemblyReference.cache
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\obj\Debug\Fd-DBC.csproj.CoreCompileInputs.cache
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\obj\Debug\Fd-DBC.csproj.CopyComplete
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\obj\Debug\Fd-DBC.dll
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\obj\Debug\Fd-DBC.pdb

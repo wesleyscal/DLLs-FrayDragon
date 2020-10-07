@@ -26,7 +26,7 @@ namespace Fd_DBC
         private static string Senha = "";
 
         //Configurar Banco
-        public void ConfigBanco(string Server, string Port, string User, string Banco, string Senha)
+        public void ConfigConexao(string Server, string Port, string User, string Banco, string Senha)
         {
             DBC.Server = Server;
             DBC.Port = Port;
@@ -38,10 +38,17 @@ namespace Fd_DBC
         //conectar banco de dados
         public void ConectarBancoDeDados()
         {
-            ConectarBanco.Close();
-            string Config = "server=" + Server + ";port=" + Port + ";User id=" + User + ";database=" + Banco + ";password=" + Senha + ";CharSet=utf8";
-            ConectarBanco.ConnectionString = Config;
-            ConectarBanco.Open();
+            try
+            {
+                ConectarBanco.Close();
+                string Config = "server=" + Server + ";port=" + Port + ";User id=" + User + ";database=" + Banco + ";password=" + Senha + ";CharSet=utf8";
+                ConectarBanco.ConnectionString = Config;
+                ConectarBanco.Open();
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Não foi possivel se conectar ao banco: " + e.Message);
+            }
         }
 
         //Executa comando no MySql
