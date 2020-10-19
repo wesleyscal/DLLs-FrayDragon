@@ -11,6 +11,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.IO;
 using System.Security.Cryptography;
+using System.Drawing;
 
 namespace Fd_DBC
 {
@@ -31,11 +32,12 @@ namespace Fd_DBC
             //Cria o XML
             XmlTextWriter xml;
             xml = new XmlTextWriter(path + Arquivo, Encoding.UTF8);
+            xml.Dispose();
 
-            //Adiciona Informação para não ser nulo
-            xml.WriteStartElement("Root");
-            xml.WriteEndElement();
-            xml.Close();
+            //Instacia o root
+            XElement Rxml = new XElement("Root");
+            Rxml.Save(path + Arquivo);
+
         }
         #endregion
 
@@ -43,6 +45,12 @@ namespace Fd_DBC
         //Configurar Banco
         public void ConfigConexao(string Server, string Port, string User, string Banco, string Senha)
         {
+            //Testa as configuraçoes
+            string Config = "server= " + Server + ";port= " + Port + ";User id= " + User + ";database= " + Banco + ";password= " + Senha + ";CharSet= utf8";
+            ConectarBanco.ConnectionString = Config;
+            ConectarBanco.Open();
+            ConectarBanco.Close();
+
             //Caminho do XML
             string path = Directory.GetCurrentDirectory() + "\\BancoConfig.xml";
 
@@ -72,7 +80,7 @@ namespace Fd_DBC
                 );
 
             //Salva Configuração
-            Rxml.Save(path);
+            Rxml.Save("BancoConfig.xml");
         }
 
         //conectar banco de dados
@@ -132,24 +140,21 @@ namespace Fd_DBC
                 }
             }
 
-            try
-            {
-                //Descriptografar XML
-                Server = DesEncrypt(Server, KeyCrip);
-                Port = DesEncrypt(Port, KeyCrip);
-                User = DesEncrypt(User, KeyCrip);
-                Banco = DesEncrypt(Banco, KeyCrip);
-                Senha = DesEncrypt(Senha, KeyCrip);
+            xml.Close();
 
-                ConectarBanco.Close();
-                string Config = "server= " + Server + ";port= " + Port + ";User id= " + User + ";database= " + Banco + ";password= " + Senha + ";CharSet= utf8";
-                ConectarBanco.ConnectionString = Config;
-                ConectarBanco.Open();
-            }
-            catch (MySqlException e)
-            {
-                MessageBox.Show("Não foi possivel se conectar ao banco: " + e.Message);
-            }
+            //Descriptografar XML
+            Server = DesEncrypt(Server, KeyCrip);
+            Port = DesEncrypt(Port, KeyCrip);
+            User = DesEncrypt(User, KeyCrip);
+            Banco = DesEncrypt(Banco, KeyCrip);
+            Senha = DesEncrypt(Senha, KeyCrip);
+
+            //Conecta ao banco
+            ConectarBanco.Close();
+            string Config = "server= " + Server + ";port= " + Port + ";User id= " + User + ";database= " + Banco + ";password= " + Senha + ";CharSet= utf8";
+            ConectarBanco.ConnectionString = Config;
+            ConectarBanco.Open();
+
         }
 
         //Executa comando no MySql
