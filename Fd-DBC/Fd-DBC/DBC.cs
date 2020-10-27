@@ -194,6 +194,23 @@ namespace Fd_DBC
             //Método que inserem as informações da pesquisa SQL
             adp.Fill(dt);
         }
+
+        //Retornar valor string
+        public string RetornarDadosString(string dados)
+        {
+            //Objeto que retornam os valores da pesquisa SQL
+            MySqlDataAdapter adp = new MySqlDataAdapter(MyCMD);
+
+            //Intacia DataTable
+            DataTable dt = new DataTable();
+
+            //Método que inserem as informações da pesquisa SQL
+            adp.Fill(dt);
+
+            dados = dt.ToString();
+
+            return dados;
+        }
         #endregion
 
         #region DataGreedView
