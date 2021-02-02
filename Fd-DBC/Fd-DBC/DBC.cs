@@ -157,6 +157,86 @@ namespace Fd_DBC
 
         }
 
+        //Retornar Configuração do banco
+        public void RetornarConfigBanco(DataTable dt)
+        {
+
+            //Caminho do XML
+            string path = Directory.GetCurrentDirectory() + "\\BancoConfig.xml";
+
+            string Key = "";
+
+            string Server = "";
+            string Port = "";
+            string User = "";
+            string Banco = "";
+            string Senha = "";
+
+            //Retorna Vazio, caso XML não exista
+            if (File.Exists(path) == false)
+            {
+                dt.Columns.Add("Config");
+                dt.Rows.Add(Server);
+                dt.Rows.Add(Port);
+                dt.Rows.Add(User);
+                dt.Rows.Add(Banco);
+                dt.Rows.Add(Senha);
+                return;
+            }
+
+            XmlTextReader xml = new XmlTextReader(path);
+
+            while (xml.Read())
+            {
+                switch (xml.NodeType)
+                {
+                    case XmlNodeType.Element: //Pega Nome do Elemento de abertura
+                        Key = xml.Name;
+                        break;
+
+                    case XmlNodeType.Text: //Pega o valor do elemento
+                        if (Key == "Servidor")
+                        {
+                            Server = xml.Value;
+                        }
+                        if (Key == "Port")
+                        {
+                            Port = xml.Value;
+                        }
+                        if (Key == "User")
+                        {
+                            User = xml.Value;
+                        }
+                        if (Key == "Banco")
+                        {
+                            Banco = xml.Value;
+                        }
+                        if (Key == "Senha")
+                        {
+                            Senha = xml.Value;
+                        }
+                        break;
+                }
+            }
+
+            xml.Close();
+
+            //Descriptografar XML
+            Server = DesEncrypt(Server, KeyCrip);
+            Port = DesEncrypt(Port, KeyCrip);
+            User = DesEncrypt(User, KeyCrip);
+            Banco = DesEncrypt(Banco, KeyCrip);
+            Senha = DesEncrypt(Senha, KeyCrip);
+
+            dt.Columns.Add("Config");
+            dt.Rows.Add(Server);
+            dt.Rows.Add(Port);
+            dt.Rows.Add(User);
+            dt.Rows.Add(Banco);
+            dt.Rows.Add(Senha);
+
+        }
+
         //Executa comando no MySql
         public void ExecutarComandoSql(string cmd)
         {
@@ -230,10 +310,14 @@ namespace Fd_DBC
             dgv.ReadOnly = true;
 
             //Fonte dos Cabeçalhos das Colunas
-            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Verdana", 8.25F, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Verdana", 9F, FontStyle.Bold);
 
             //Alternar Cores Linhas
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
+
+            //Cor Cabeçalho
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+            dgv.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightGray;
         }
         #endregion
 
@@ -307,6 +391,34 @@ namespace Fd_DBC
             DTP.Format = DateTimePickerFormat.Custom;
             DTP.CustomFormat = "dd/MM/yyyy HH:mm:ss";
         }
+
+        /// <summary>
+        /// Adicionar no evento KeyPresss
+        /// </summary>
+        public bool ValidarNumero(string obj)
+        {
+            double n;
+            string e = obj.ToString();
+            bool IN = double.TryParse(e, out n);
+
+            if (IN)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void SomenteLetra(TextBox txt, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
         #endregion Formatar
 
         #region Criptografia
@@ -355,5 +467,12 @@ namespace Fd_DBC
 
         }
         #endregion
+
+        #region InputBox
+
+
+
+        #endregion
+
     }
 }
