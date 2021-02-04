@@ -38,3 +38,4 @@ C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\obj\Debug\Fd-DBC
 C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\obj\Debug\Fd-DBC.csproj.CopyComplete
 C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\obj\Debug\Fd-DBC.dll
 C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\obj\Debug\Fd-DBC.pdb
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\bin\Debug\System.Numerics.Vectors.dll

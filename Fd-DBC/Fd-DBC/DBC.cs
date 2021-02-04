@@ -469,9 +469,33 @@ namespace Fd_DBC
         #endregion
 
         #region InputBox
+        //Configura visual da inputbox
+        private void ConfigInputBox(InputBox frm)
+        {
+            //-----Botao-----
+            //backColor
+            frm.btnOk.BackColor = Color.FromArgb(Botao_BackColor_R, Botao_BackColor_G, Botao_BackColor_B);
+            frm.btnCancelar.BackColor = Color.FromArgb(Botao_BackColor_R, Botao_BackColor_G, Botao_BackColor_B);
+            //ForeColor
+            frm.btnOk.ForeColor = Color.FromArgb(Botao_ForeColor_R, Botao_ForeColor_G, Botao_ForeColor_B);
+            frm.btnCancelar.ForeColor = Color.FromArgb(Botao_ForeColor_R, Botao_ForeColor_G, Botao_ForeColor_B);
+            //-----Label-----
+            //ForeColor
+            frm.lblTexto.ForeColor = Color.FromArgb(Label_ForeColor_R, Label_ForeColor_G, Label_ForeColor_B);
+            //-----Form-----
+            //backColor
+            frm.BackColor = Color.FromArgb(Form_BackColor_R, Form_BackColor_G, Form_BackColor_B);
+        }
 
-
-
+        //Chama a inputBox
+        public string InputBox(string Cabecalho, string Texto, string Valor)
+        {
+            InputBox frm = new InputBox(Cabecalho, Texto, Valor);
+            ConfigInputBox(frm);
+            frm.ShowDialog();
+            string resultado = frm.InputResult();
+            return resultado;
+        }
         #endregion
 
         #region Visual
@@ -512,7 +536,7 @@ namespace Fd_DBC
         #endregion
 
         #region metodo
-        //Metodo Botão
+        //Botão
         public void Visual_Botao_BackColor(int R, int G, int B)
         {
             Botao_BackColor_R = CorrigirRGB(R);
@@ -525,6 +549,7 @@ namespace Fd_DBC
             Botao_ForeColor_G = CorrigirRGB(G);
             Botao_ForeColor_B = CorrigirRGB(B);
         }
+
         //Label
         public void Visual_Label_ForeColor(int R, int G, int B)
         {
@@ -532,6 +557,7 @@ namespace Fd_DBC
             Label_ForeColor_G = CorrigirRGB(G);
             Label_ForeColor_B = CorrigirRGB(B);
         }
+
         //Form
         public void Visual_Form_BackColor(int R, int G, int B)
         {
@@ -540,6 +566,7 @@ namespace Fd_DBC
             Form_BackColor_B = CorrigirRGB(B);
         }
         #endregion
+
         #endregion
 
     }
