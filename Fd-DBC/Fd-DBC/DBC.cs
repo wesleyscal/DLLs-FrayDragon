@@ -474,5 +474,73 @@ namespace Fd_DBC
 
         #endregion
 
+        #region Visual
+        //validar RGB 0 a 255
+        internal int CorrigirRGB(int RGB)
+        {
+            if (RGB > 255)
+            {
+                RGB = 255;
+                return RGB;
+            }
+            if (RGB < 0)
+            {
+                RGB = 0;
+                return RGB;
+            }
+
+            return RGB;
+        }
+
+        #region Variavel
+        //Botão BackColor
+        internal int Botao_BackColor_R = 150;
+        internal int Botao_BackColor_G = 150;
+        internal int Botao_BackColor_B = 150;
+        //Botão ForeColor
+        internal int Botao_ForeColor_R = 0;
+        internal int Botao_ForeColor_G = 0;
+        internal int Botao_ForeColor_B = 0;
+        //Label ForeColor
+        internal int Label_ForeColor_R = 0;
+        internal int Label_ForeColor_G = 0;
+        internal int Label_ForeColor_B = 0;
+        //Form BackColor
+        internal int Form_BackColor_R = 220;
+        internal int Form_BackColor_G = 220;
+        internal int Form_BackColor_B = 220;
+        #endregion
+
+        #region metodo
+        //Metodo Botão
+        public void Visual_Botao_BackColor(int R, int G, int B)
+        {
+            Botao_BackColor_R = CorrigirRGB(R);
+            Botao_BackColor_G = CorrigirRGB(G);
+            Botao_BackColor_B = CorrigirRGB(B);
+        }
+        public void Visual_Botao_ForeColor(int R, int G, int B)
+        {
+            Botao_ForeColor_R = CorrigirRGB(R);
+            Botao_ForeColor_G = CorrigirRGB(G);
+            Botao_ForeColor_B = CorrigirRGB(B);
+        }
+        //Label
+        public void Visual_Label_ForeColor(int R, int G, int B)
+        {
+            Label_ForeColor_R = CorrigirRGB(R);
+            Label_ForeColor_G = CorrigirRGB(G);
+            Label_ForeColor_B = CorrigirRGB(B);
+        }
+        //Form
+        public void Visual_Form_BackColor(int R, int G, int B)
+        {
+            Form_BackColor_R = CorrigirRGB(R);
+            Form_BackColor_G = CorrigirRGB(G);
+            Form_BackColor_B = CorrigirRGB(B);
+        }
+        #endregion
+        #endregion
+
     }
 }
