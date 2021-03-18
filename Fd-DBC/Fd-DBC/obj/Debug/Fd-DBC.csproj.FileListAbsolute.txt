@@ -39,3 +39,5 @@ C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\obj\Debug\Fd-DBC
 C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\obj\Debug\Fd-DBC.dll
 C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\obj\Debug\Fd-DBC.pdb
 C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\obj\Debug\Fd_DBC.InputBox.resources
+C:\Users\ti02\Desktop\Projeto Git\DLLs-FrayDragon\Fd-DBC\Fd-DBC\obj\Debug\Fd-DBC.csproj.GenerateResource.cache

@@ -474,17 +474,49 @@ namespace Fd_DBC
         {
             //-----Botao-----
             //backColor
-            frm.btnOk.BackColor = Color.FromArgb(Botao_BackColor_R, Botao_BackColor_G, Botao_BackColor_B);
-            frm.btnCancelar.BackColor = Color.FromArgb(Botao_BackColor_R, Botao_BackColor_G, Botao_BackColor_B);
+            if (Botao_BackColor_R == 220 && Botao_BackColor_G == 220 && Botao_BackColor_B == 220)
+            {
+                frm.btnOk.BackColor = Color.FromName(Botao_BackColor_Name);
+                frm.btnCancelar.BackColor = Color.FromName(Botao_BackColor_Name);
+            }
+            else
+            {
+                frm.btnOk.BackColor = Color.FromArgb(Botao_BackColor_R, Botao_BackColor_G, Botao_BackColor_B);
+                frm.btnCancelar.BackColor = Color.FromArgb(Botao_BackColor_R, Botao_BackColor_G, Botao_BackColor_B);
+            }
             //ForeColor
-            frm.btnOk.ForeColor = Color.FromArgb(Botao_ForeColor_R, Botao_ForeColor_G, Botao_ForeColor_B);
-            frm.btnCancelar.ForeColor = Color.FromArgb(Botao_ForeColor_R, Botao_ForeColor_G, Botao_ForeColor_B);
+            if (Botao_ForeColor_R == 0 && Botao_ForeColor_G == 0 && Botao_ForeColor_B == 0)
+            {
+                frm.btnOk.ForeColor = Color.FromName(Botao_ForeColor_Name);
+                frm.btnCancelar.ForeColor = Color.FromName(Botao_ForeColor_Name);
+            }
+            else
+            {
+                frm.btnOk.ForeColor = Color.FromArgb(Botao_ForeColor_R, Botao_ForeColor_G, Botao_ForeColor_B);
+                frm.btnCancelar.ForeColor = Color.FromArgb(Botao_ForeColor_R, Botao_ForeColor_G, Botao_ForeColor_B);
+            }
+
             //-----Label-----
             //ForeColor
-            frm.lblTexto.ForeColor = Color.FromArgb(Label_ForeColor_R, Label_ForeColor_G, Label_ForeColor_B);
+            if (Label_ForeColor_R == 0 && Label_ForeColor_G == 0 && Label_ForeColor_B == 0)
+            {
+                frm.lblTexto.ForeColor = Color.FromName(Label_ForeColor_Name);
+            }
+            else
+            {
+                frm.lblTexto.ForeColor = Color.FromArgb(Label_ForeColor_R, Label_ForeColor_G, Label_ForeColor_B);
+            }
+
             //-----Form-----
             //backColor
-            frm.BackColor = Color.FromArgb(Form_BackColor_R, Form_BackColor_G, Form_BackColor_B);
+            if (Form_BackColor_R == 245 && Form_BackColor_G == 245 && Form_BackColor_B == 245)
+            {
+                frm.BackColor = Color.FromName(Form_BackColor_Name);
+            }
+            else
+            {
+                frm.BackColor = Color.FromArgb(Form_BackColor_R, Form_BackColor_G, Form_BackColor_B);
+            }
         }
 
         //Chama a inputBox
@@ -518,52 +550,72 @@ namespace Fd_DBC
 
         #region Variavel
         //Botão BackColor
-        internal int Botao_BackColor_R = 150;
-        internal int Botao_BackColor_G = 150;
-        internal int Botao_BackColor_B = 150;
-        //Botão ForeColor
+        internal int Botao_BackColor_R = 220;
+        internal int Botao_BackColor_G = 220;
+        internal int Botao_BackColor_B = 220;
+        internal string Botao_BackColor_Name = "Gainsboro";
+        //Botão ForeColor 
         internal int Botao_ForeColor_R = 0;
         internal int Botao_ForeColor_G = 0;
         internal int Botao_ForeColor_B = 0;
+        internal string Botao_ForeColor_Name = "Black";
         //Label ForeColor
         internal int Label_ForeColor_R = 0;
         internal int Label_ForeColor_G = 0;
         internal int Label_ForeColor_B = 0;
+        internal string Label_ForeColor_Name = "Black";
         //Form BackColor
-        internal int Form_BackColor_R = 220;
-        internal int Form_BackColor_G = 220;
-        internal int Form_BackColor_B = 220;
+        internal int Form_BackColor_R = 245;
+        internal int Form_BackColor_G = 245;
+        internal int Form_BackColor_B = 245;
+        internal string Form_BackColor_Name = "WhiteSmoke";
         #endregion
 
         #region metodo
         //Botão
-        public void Visual_Botao_BackColor(int R, int G, int B)
+        public void Visual_InputBox_Botao_BackColor(int R, int G, int B)
         {
             Botao_BackColor_R = CorrigirRGB(R);
             Botao_BackColor_G = CorrigirRGB(G);
             Botao_BackColor_B = CorrigirRGB(B);
         }
-        public void Visual_Botao_ForeColor(int R, int G, int B)
+        public void Visual_InputBox_Botao_BackColor(string Cor)
+        {
+            Botao_BackColor_Name = Cor;
+        }
+        public void Visual_InputBox_Botao_ForeColor(int R, int G, int B)
         {
             Botao_ForeColor_R = CorrigirRGB(R);
             Botao_ForeColor_G = CorrigirRGB(G);
             Botao_ForeColor_B = CorrigirRGB(B);
         }
+        public void Visual_InputBox_Botao_ForeColor(string Cor)
+        {
+            Botao_ForeColor_Name = Cor;
+        }
 
         //Label
-        public void Visual_Label_ForeColor(int R, int G, int B)
+        public void Visual_InputBox_Label_ForeColor(int R, int G, int B)
         {
             Label_ForeColor_R = CorrigirRGB(R);
             Label_ForeColor_G = CorrigirRGB(G);
             Label_ForeColor_B = CorrigirRGB(B);
         }
+        public void Visual_InputBox_Label_ForeColor(string Cor)
+        {
+            Label_ForeColor_Name = Cor;
+        }
 
         //Form
-        public void Visual_Form_BackColor(int R, int G, int B)
+        public void Visual_InputBox_Form_BackColor(int R, int G, int B)
         {
             Form_BackColor_R = CorrigirRGB(R);
             Form_BackColor_G = CorrigirRGB(G);
             Form_BackColor_B = CorrigirRGB(B);
+        }
+        public void Visual_InputBox_Form_BackColor(string Cor)
+        {
+            Form_BackColor_Name = Cor;
         }
         #endregion
 
